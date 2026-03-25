@@ -1,6 +1,5 @@
-FROM node:18-alpine
+FROM eclipse-temurin:21-jdk
 WORKDIR /app
-COPY package.json ./
-RUN npm install
-COPY . .
-CMD ["node", "index.js"]
+COPY . /app
+RUN javac HelloWorld.java
+CMD ["java","HelloWorld"]
